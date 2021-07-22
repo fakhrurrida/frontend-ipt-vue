@@ -1,0 +1,194 @@
+{
+  "swagger": "2.0",
+  "host" : "api-devsitopenapi.herokuapp.com",
+  "schemes" : [ "https" ],
+  "paths": {
+    "/bi/openapi/access-token/b2b": {
+      "post": {
+        "tags": [
+          "AccessToken"
+        ],
+        "description": "Sample Request \r\n\r\n    {\r\n        \"grantType\": \"client_credentials\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Please use your client id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/access-token/b2b2c": {
+      "post": {
+        "tags": [
+          "AccessToken"
+        ],
+        "description": "Sample Request \r\n\r\n    {\r\n        \"grantType\": \"authorization_code\",\r\n        \"authCode\": \"a6975f82-d00a-4ddc-9633-087fefb6275e\",\r\n        \"refreshToken\": \"\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Please use your client id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/utilities/signature-auth": {
+      "post": {
+        "tags": [
+          "Utilities"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Please use your client id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Private_Key",
+            "description": "Please use your private key to get valid rsa key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/utilities/signature-service": {
+      "post": {
+        "tags": [
+          "Utilities"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-SECRET",
+            "description": "Please use your client secret",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "HttpMethod",
+            "description": "e.g POST",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "EndpoinUrl",
+            "description": "e.g /bi/openapi/..",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "AccessToken",
+            "description": "e.g eyJhbGci.eyJqdGkiO.rRCcOp9CQwOvhbCw",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}

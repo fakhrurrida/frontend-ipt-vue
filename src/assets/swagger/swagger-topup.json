@@ -1,0 +1,105 @@
+{
+  "swagger": "2.0",
+  "host" : "api-devsitopenapi.herokuapp.com",
+  "schemes" : [ "https" ],
+  "paths": {
+    "/bi/openapi/topup-account/inquiry": {
+      "post": {
+        "tags": [
+          "TransferCredit"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    customerNumber  : 17081945\r\n            \r\nSample Request\r\n\r\n    {\r\n        \"clientId\":\"53519978789302243205291950786565\",\r\n        \"reqMsgId\":\"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"customerNumber\":\"17081945\",\r\n        \"amount\":{\r\n            \"value\": 10000.00,\r\n            \"currency\":\"IDR\"\r\n        },\r\n        \"transactionDate\":\"2020-12-21T14:56:11+07:00\",\r\n        \"partnerTrxId\":\"8590287535199787893022432052919507865650256967478535199787893022\",\r\n        \"additionalInfo\":{\r\n            \"xxxxxx\":\"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/topup-account/transaction": {
+      "post": {
+        "tags": [
+          "TransferCredit"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    customerNumber  : 17081945\r\n            \r\nSample Request\r\n\r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"customerNumber\": \"17081945\",\r\n        \"customerName\": \"John Doe\",\r\n        \"amount\": {\r\n            \"value\": 10000.0,\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"feeAmount\": {\r\n            \"value\": 10000.0,\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"currency\": \"IDR\",\r\n        \"transactionDate\": \"2020-12-21T14:56:11+07:00\",\r\n        \"partnerTrxId\": \"8590287535199787893022432052919507865650256967478535199787893022\",\r\n        \"sessionId\": \"883737GHY8839\",\r\n        \"categoryId\": \"6\",\r\n        \"notes\": \"notes test\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}

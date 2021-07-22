@@ -1,0 +1,56 @@
+{
+  "swagger": "2.0",
+  "host" : "api-devsitopenapi.herokuapp.com",
+  "schemes" : [ "https" ],
+  "paths": {
+    "/bi/openapi/balance-inquiry": {
+      "post": {
+        "tags": [
+          "BalanceInquiry"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    accountNo   : 2000100101, 2000200202, 8000800808\r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"accountNo\":\"2000200202\",\r\n        \"clientId\":\"6ae957c4-2863-4713-acce-ba12de636cfc\",\r\n        \"reqMsgId\":\"8012386362794571227492051783554991369985436304040968953921327704\",\r\n        \"additionalInfo\":{\r\n            \"xxxxxx\":\"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}
