@@ -14,7 +14,11 @@
         mode="out-in">
         <div class="swagger-container">
           <h1>UTILITY</h1>
-          <SwaggerUtility/>
+          <div class="card">
+            <div class="card-body">
+              <SwaggerUtility/>
+            </div>
+          </div>
             <div class="awan_top">
               <img class="img-cloud2" :src="require('@/assets/awan2.svg')" alt="">
             </div>

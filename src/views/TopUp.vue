@@ -23,7 +23,11 @@
                 PJP AIS.</p>
             </div>
           </div>
-          <SwaggerBNI/>
+          <div class="card">
+            <div class="card-body">
+              <SwaggerTopUp/>
+            </div>
+          </div>
             <div class="awan_top">
               <img class="img-cloud2" :src="require('@/assets/awan2.svg')" alt="">
             </div>
@@ -57,11 +61,11 @@
 </template>
 
 <script>
-import SwaggerBNI from "@/components/SwaggerBNI"
+import SwaggerTopUp from "@/components/SwaggerTopUp"
 export default {
   name: "TopUp",
   components: {
-    SwaggerBNI
+    SwaggerTopUp
   },
   beforeCreate() {
     const applyconfig = {

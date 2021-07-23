@@ -1,5 +1,5 @@
 <template>
-    <div class="swagger" id="swagger"></div>
+    <div class="swaggercnb" id="swaggercnb"></div>
 </template>
 
 <script>
@@ -7,12 +7,12 @@ import SwaggerUI from 'swagger-ui';
 import 'swagger-ui/dist/swagger-ui.css';
 
 export default {
-    name: "SwaggerBNI",
+    name: "SwaggerTransferCreditNonBank",
     mounted() {
-        const spec = require('../assets/swagger/swagger-topup.json');
+        const spec = require('../assets/swagger/swagger-transfercredit-nonbank.json');
         SwaggerUI({
             spec: spec,
-            dom_id: '#swagger'
+            dom_id: '#swaggercnb'
         })
     }
 }

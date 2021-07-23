@@ -59,6 +59,15 @@ const routes = [{
         auth: "registered"
     }
   },
+  {
+    path: '/transfer-credit',
+    name: 'TransferCredit',
+    component: () => import('../views/TransferCredit.vue'),
+    props: true,
+    meta: {
+        auth: "registered"
+    }
+  },
 ]
 
 const router = new VueRouter({

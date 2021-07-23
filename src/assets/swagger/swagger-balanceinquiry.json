@@ -1,33 +1,45 @@
 {
   "swagger": "2.0",
-  "host" : "api-devsitopenapi.herokuapp.com",
-  "schemes" : [ "https" ],
+  "host": "api-devsitopenapi.herokuapp.com",
+  "schemes": [
+    "https"
+  ],
   "paths": {
     "/bi/openapi/balance-inquiry": {
       "post": {
         "tags": [
           "BalanceInquiry"
         ],
-        "description": "Please use this value for sandbox:\r\n            \r\n    accountNo   : 2000100101, 2000200202, 8000800808\r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"accountNo\":\"2000200202\",\r\n        \"clientId\":\"6ae957c4-2863-4713-acce-ba12de636cfc\",\r\n        \"reqMsgId\":\"8012386362794571227492051783554991369985436304040968953921327704\",\r\n        \"additionalInfo\":{\r\n            \"xxxxxx\":\"xxxxxx\"\r\n        }\r\n    }",
+        "description": "Please use this value for sandbox:\r\n            \r\n    accountNo   : 2000100101\r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"accountNo\": \"2000100101\",\r\n        \"clientId\": \"6ae957c4-2863-4713-acce-ba12de636cfc\",\r\n        \"reqMsgId\": \"8012386362794571227492051783554991369985436304040968953921327704\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
         "consumes": [
           "application/json"
         ],
         "parameters": [
           {
             "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
             "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
             "required": true,
             "type": "string"
           },
           {
             "in": "header",
             "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
             "required": true,
             "type": "string"
           },
           {
             "in": "header",
             "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
             "required": true,
             "type": "string",
             "maxLength": 25
@@ -35,8 +47,64 @@
           {
             "in": "header",
             "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
           },
           {
             "in": "body",

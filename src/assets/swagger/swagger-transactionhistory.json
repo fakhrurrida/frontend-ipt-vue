@@ -1,33 +1,45 @@
 {
   "swagger": "2.0",
-  "host" : "api-devsitopenapi.herokuapp.com",
-  "schemes" : [ "https" ],
+  "host": "api-devsitopenapi.herokuapp.com",
+  "schemes": [
+    "https"
+  ],
   "paths": {
-    "/bi/openapi/transaction-history/list": {
+    "/bi/openapi/transaction-history-list": {
       "post": {
         "tags": [
           "TransactionHistory"
         ],
-        "description": "Sample Request\r\n    \r\n    {\r\n        \"reqMsgId\":\"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"fromDateTime\":\"2019-07-03T12:08:56-07:00\",\r\n        \"toDateTime\":\"2019-07-03T12:08:56-07:00\",\r\n        \"pageSize\":10,\r\n        \"pageNumber\":2,\r\n        \"additionalInfo\":{\r\n            \"xxxxxx\":\"xxxxxx\"\r\n        }\r\n    }",
+        "description": "Sample Request\r\n    \r\n    {\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"fromDateTime\": \"2019-07-03T12:08:56-07:00\",\r\n        \"toDateTime\": \"2019-07-03T12:08:56-07:00\",\r\n        \"pageSize\": 10,\r\n        \"pageNumber\": 2,\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
         "consumes": [
           "application/json"
         ],
         "parameters": [
           {
             "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
             "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
             "required": true,
             "type": "string"
           },
           {
             "in": "header",
             "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
             "required": true,
             "type": "string"
           },
           {
             "in": "header",
             "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
             "required": true,
             "type": "string",
             "maxLength": 25
@@ -35,8 +47,64 @@
           {
             "in": "header",
             "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
           },
           {
             "in": "body",
@@ -52,34 +120,41 @@
         }
       }
     },
-    "/bi/openapi/transaction-history/detail": {
+    "/bi/openapi/transaction-history-detail": {
       "post": {
         "tags": [
           "TransactionHistory"
         ],
-        "description": "Please use this value for sandbox:\r\n            \r\n    referenceId : 20201212010230, 20200201203000\r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"reqMsgId\":\"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"referenceId\":\"20201212010230\",\r\n        \"additionalInfo\":{\r\n            \"xxxxxx\":\"xxxxxx\"\r\n        }\r\n    }",
+        "description": "Please use this value for sandbox:\r\n            \r\n    referenceId : 20201212010230\r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"referenceId\": \"20201212010230\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
         "consumes": [
-          "application/json"
-        ],
-        "produces": [
           "application/json"
         ],
         "parameters": [
           {
             "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
             "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
             "required": true,
             "type": "string"
           },
           {
             "in": "header",
             "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
             "required": true,
             "type": "string"
           },
           {
             "in": "header",
             "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
             "required": true,
             "type": "string",
             "maxLength": 25
@@ -87,8 +162,64 @@
           {
             "in": "header",
             "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
           },
           {
             "in": "body",
@@ -99,10 +230,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/TransactionHistoryDetailResponse"
-            }
+            "description": "Success"
           }
         }
       }
@@ -112,26 +240,36 @@
         "tags": [
           "TransactionHistory"
         ],
-        "description": "Please use this value for sandbox:\r\n            \r\n    accountNo   : 2000200202\r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"accountNo\":\"2000200202\",\r\n        \"reqMsgId\":\"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"referenceId\":\"20200801198230912830091123\",\r\n        \"fromDateTime\":\"2019-07-03T12:08:56-07:00\",\r\n        \"toDateTime\":\"2019-07-03T12:08:56-07:00\",\r\n        \"additionalInfo\":{\r\n            \"xxxxxx\":\"xxxxxx\"\r\n        }\r\n    }",
+        "description": "Please use this value for sandbox:\r\n            \r\n    accountNo   : 2000200202\r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"accountNumber\": \"2000200202\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"fromDateTime\": \"2019-07-03T12:08:56-07:00\",\r\n        \"toDateTime\": \"2019-07-03T12:08:56-07:00\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
         "consumes": [
           "application/json"
         ],
         "parameters": [
           {
             "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
             "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
             "required": true,
             "type": "string"
           },
           {
             "in": "header",
             "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
             "required": true,
             "type": "string"
           },
           {
             "in": "header",
             "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
             "required": true,
             "type": "string",
             "maxLength": 25
@@ -139,8 +277,64 @@
           {
             "in": "header",
             "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
           },
           {
             "in": "body",
@@ -154,116 +348,6 @@
             "description": "Success"
           }
         }
-      }
-    }
-  },
-  "definitions": {
-    "Amount": {
-      "required": [
-        "currency"
-      ],
-      "type": "object",
-      "properties": {
-        "value": {
-          "format": "double",
-          "maximum": 10000000000000000,
-          "minimum": 1,
-          "type": "number"
-        },
-        "currency": {
-          "maxLength": 3,
-          "type": "string"
-        }
-      }
-    },
-    "SourceOfFunds": {
-      "required": [
-        "source"
-      ],
-      "type": "object",
-      "properties": {
-        "source": {
-          "maxLength": 32,
-          "type": "string"
-        },
-        "amount": {
-          "$ref": "#/definitions/Amount"
-        }
-      }
-    },
-    "TransactionHistoryDetailResponse": {
-      "required": [
-        "dateTime",
-        "reqMsgId",
-        "responseCode",
-        "responseMessage",
-        "status",
-        "transactionId",
-        "type"
-      ],
-      "type": "object",
-      "properties": {
-        "responseCode": {
-          "maxLength": 9,
-          "type": "string"
-        },
-        "responseMessage": {
-          "maxLength": 150,
-          "type": "string"
-        },
-        "amount": {
-          "$ref": "#/definitions/Amount"
-        },
-        "cancelledTime": {
-          "maxLength": 25,
-          "type": "string"
-        },
-        "dateTime": {
-          "maxLength": 24,
-          "type": "string"
-        },
-        "originReferenceId": {
-          "maxLength": 35,
-          "type": "string"
-        },
-        "originTransactionid": {
-          "maxLength": 35,
-          "type": "string"
-        },
-        "referenceId": {
-          "maxLength": 35,
-          "type": "string"
-        },
-        "refundAmount": {
-          "$ref": "#/definitions/Amount"
-        },
-        "remark": {
-          "maxLength": 256,
-          "type": "string"
-        },
-        "reqMsgId": {
-          "maxLength": 54,
-          "type": "string"
-        },
-        "sourceOfFunds": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SourceOfFunds"
-          }
-        },
-        "status": {
-          "maxLength": 32,
-          "type": "string"
-        },
-        "transactionId": {
-          "maxLength": 35,
-          "type": "string"
-        },
-        "type": {
-          "maxLength": 32,
-          "type": "string"
-        },
-        "additionalInfo": { }
       }
     }
   }

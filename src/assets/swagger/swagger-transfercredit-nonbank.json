@@ -1,0 +1,1456 @@
+{
+  "swagger": "2.0",
+  "host": "api-devsitopenapi.herokuapp.com",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/bi/openapi/bulk-cashin/submit": {
+      "post": {
+        "tags": [
+          "BulkCashIn"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    accountNumber  : 17081945\r\n            \r\nSample Request\r\n\r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"transactionDate\": \"2020-12-21T17:01:11+07:00\",\r\n        \"partnerTrxId\": \"LA0001\",\r\n        \"currency\": \"IDR\",\r\n        \"data\": [\r\n            {\r\n                \"accountNumber\": \"17081945\",\r\n                \"accountName\": \"Kades\",\r\n                \"amount\": {\r\n                    \"value\": \"10000.00\",\r\n                    \"currency\": \"IDR\"\r\n                },\r\n                \"partnerReferenceNumber\": \"ABC1234\"\r\n            }\r\n        ],\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/bulk-cashin/notify": {
+      "post": {
+        "tags": [
+          "BulkCashIn"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    bulkID          : bulk000001\r\n    customerNumber  : 17081945\r\n            \r\nSample Request\r\n\r\n    {\r\n        \"bulkId\": \"bulk000001\",\r\n        \"partnerTrxId\": \"LA0001\",\r\n        \"data\": [\r\n            {\r\n                \"customerNumber\": \"17081945\",\r\n                \"customerName\": \"Kades\",\r\n                \"amount\": {\r\n                    \"value\": \"10000.00\",\r\n                    \"currency\": \"IDR\"\r\n                },\r\n                \"partnerReferenceNumber\": \"ABC1234\"\r\n            }\r\n        ],\r\n        \"referenceNumber\": \"ABC1234\",\r\n        \"transactionStatus\": \"001\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/bank/account": {
+      "post": {
+        "tags": [
+          "TransferToBank"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    customerNumber              : 17081945\r\n    beneficiaryAccountNumber    : 2000200202\r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"customerNumber\": \"17081945\",\r\n        \"amount\": {\r\n            \"value\": \"10000.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"beneficiaryAccountNumber\": \"2000200202\",\r\n        \"partnerTrxId\": \"LA0001\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/bank/transfer": {
+      "post": {
+        "tags": [
+          "TransferToBank"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    customerNumber              : 17081945\r\n    beneficiaryAccountNumber    : 2000200202\r\n            \r\nSample Request\r\n\r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"customerNumber\": \"17081945\",\r\n        \"accountType\": \"tabungan\",\r\n        \"beneficiaryAccountNumber\": \"2000200202\",\r\n        \"beneficiaryBankCode\": \"002\",\r\n        \"partnerTrxId\": \"LA0001\",\r\n        \"amount\": {\r\n            \"value\": \"10000.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"sessionId\": \"0UYEB77329002HY\",\r\n        \"currency\": \"IDR\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/otc/cashout": {
+      "post": {
+        "tags": [
+          "TransferToOTC"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    customerNumber              : 17081945\r\n            \r\nSample Request\r\n\r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"customerNumber\": \"17081945\",\r\n        \"otp\": \"12345678\",\r\n        \"amount\": {\r\n            \"value\": \"10000.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"partnerTrxId\": \"LA0001\",\r\n        \"currency\": \"IDR\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/qris-mpm/generate": {
+      "post": {
+        "tags": [
+          "QRMPM"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    merchantId      : merch00001\r\n            \r\nSample Request\r\n\r\n    GenerateQR\r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"amount\": {\r\n            \"value\": \"100000.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"feeAmount\": {\r\n            \"value\": \"100000.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"currency\": \"IDR\",\r\n        \"merchantId\": \"merch00001\",\r\n        \"partnerTrxId\": \"TRX202010173821904898012984\",\r\n        \"storeId\": \"abcd\",\r\n        \"terminalId\": \"213141251124\",\r\n        \"validityPeriod\": \"2009-07-03T12:08:56-07:00\",\r\n        \"referenceNumber\": \"REF993883\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/qris-mpm/decode": {
+      "post": {
+        "tags": [
+          "QRMPM"
+        ],
+        "description": "Please use this value for sandbox:\r\n\r\n    merchantId      : merch00001\r\n            \r\nSample Request\r\n\r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"qrContent\": \"00020101....\",\r\n        \"amount\": {\r\n            \"value\": \"10000.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"merchantId\": \"merch00001\",\r\n        \"partnerTrxId\": \"LA001\",\r\n        \"scanTime\": \"2020-12-23T08:27:11+07:00\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/qris-mpm/apply-ott": {
+      "post": {
+        "tags": [
+          "QRMPM"
+        ],
+        "description": "Sample Request\r\n\r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"userResources\": [\r\n            \"OTT\"\r\n        ],\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/qris-mpm/payment": {
+      "post": {
+        "tags": [
+          "QRMPM"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    merchantId      : merch00001\r\n            \r\nSample Request \r\n\r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"merchantId\": \"merch00001\",\r\n        \"partnerTrxId\": \"LA0001\",\r\n        \"amount\": {\r\n            \"value\": \"50000.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"feeAmount\": {\r\n            \"value\": \"500.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"otp\": \"123456\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/qris-mpm/query": {
+      "post": {
+        "tags": [
+          "QRMPM"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    merchantId      : merch00001\r\n            \r\nSample Request \r\n\r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"merchantId\": \"merch00001\",\r\n        \"referenceNumber\": \"REF123456789\",\r\n        \"partnerTrxId\": \"LA0001\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/qris-mpm/notify": {
+      "post": {
+        "tags": [
+          "QRMPM"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    customerNumber      : 17081945\r\n    destinationNumber   : 2000200202\r\n    bankCode            : 002\r\n            \r\nSample Request\r\n\r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"customerNumber\": \"17081945\",\r\n        \"accountType\": \"tabungan\",\r\n        \"destinationNumber\": \"2000200202\",\r\n        \"destinationAccountName\": \"John Doe\",\r\n        \"partnerTrxId\": \"LA0001\",\r\n        \"amount\": {\r\n            \"value\": \"50000.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"sessionId\": \"0UYEB77329002HY\",\r\n        \"bankCode\": \"002\",\r\n        \"currency\": \"IDR\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/transaction-status": {
+      "post": {
+        "tags": [
+          "TransactionStatusInquiry"
+        ],
+        "description": "Sample Request\r\n\r\n    {\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1855 @@
+{
+  "swagger": "2.0",
+  "host": "api-devsitopenapi.herokuapp.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/bi/openapi/internal-account-inquiry": {
+      "post": {
+        "tags": [
+          "AccountInquiry"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    beneficiaryAccountNo    : 2000100101\r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"beneficiaryAccountNo\": \"2000100101\",\r\n        \"clientId\": \"6ae957c4-2863-4713-acce-ba12de636cfc\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/external-account-inquiry": {
+      "post": {
+        "tags": [
+          "AccountInquiry"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    beneficiaryAccountCode  : 008\r\n    beneficiaryAccountNo    : 8000800808\r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"beneficiaryAccountCode\": \"008\",\r\n        \"beneficiaryAccountNo\": \"8000800808\",\r\n        \"clientId\": \"6ae957c4-2863-4713-acce-ba12de636cfc\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/intrabank-transfer": {
+      "post": {
+        "tags": [
+          "TriggerTransfer"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    beneficiaryAccountNo    : 2000100101\r\n    sourceAccountNo         : 2000200202\r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"amount\": {\r\n            \"value\": 10000.00,\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"beneficiaryAccountNo\": \"2000100101\",\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"currency\": \"IDR\",\r\n        \"customerReference\": \"10052019\",\r\n        \"feeType\": \"BEN\",\r\n        \"remark\": \"remark test\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"sourceAccountNo\": \"2000200202\",\r\n        \"transactionDate\": \"2020-12-21T10:30:24+07:00\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/interbank-transfer": {
+      "post": {
+        "tags": [
+          "TriggerTransfer"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    beneficiaryAccountNo    : 8000800808\r\n    beneficiaryBankCode     : 008\r\n    sourceAccountNo         : 2000200202\r\n            \r\nSample Request\r\n\r\n    {\r\n        \"amount\": {\r\n            \"value\": \"10000.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"beneficiaryAccountName\": \"Yories Yolanda\",\r\n        \"beneficiaryAccountNo\": \"8000800808\",\r\n        \"beneficiaryAddress\": \"Palembang\",\r\n        \"beneficiaryBankCode\": \"008\",\r\n        \"beneficiaryBankName\": \"Bank BRI\",\r\n        \"beneficiaryEmail\": \"yories.yolanda@work.bri.co.id\",\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"currency\": \"IDR\",\r\n        \"customerReference\": \"10052019\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"sourceAccountNo\": \"2000200202\",\r\n        \"transactionDate\": \"2020-12-21T10:30:24+07:00\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/request-for-payment/trigger": {
+      "post": {
+        "tags": [
+          "TriggerTransfer"
+        ],
+        "description": "Sample Request\r\n\r\n    {\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"clientId\": \"69674785351997878930224320529195\",\r\n        \"bankCode\": \"014\",\r\n        \"beneficiaryAccountNo\": \"888801000003301\",\r\n        \"beneficiaryAccountName\": \"Yories Yolanda\",\r\n        \"remark\": \"remark test\",\r\n        \"expiredDatetime\": \"2022-12-22T08:01:16+07:00\",\r\n        \"data\": {\r\n            \"sourceAccountNo\": \"888801000157508\",\r\n            \"sourceAccountName\": \"Aurora\",\r\n            \"currency\": \"IDR\",\r\n            \"amount\": {\r\n                \"value\": \"10000.00\",\r\n                \"currency\": \"IDR\"\r\n            }\r\n        },\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/interbank-bulk-transfer/trigger": {
+      "post": {
+        "tags": [
+          "TriggerTransfer"
+        ],
+        "description": "Sample Request\r\n\r\n    {\r\n        \"bulkReqMsgId\": \"8590287025\",\r\n        \"clientId\": \"962489e9-de5d-4eb7-92a4-b07d44d64bf4\",\r\n        \"currency\": \"IDR\",\r\n        \"customerReference\": \"10052019\",\r\n        \"feeType\": \"BEN\",\r\n        \"remark\": \"remark test\",\r\n        \"sourceAccountNo\": \"888801000157508\",\r\n        \"transactionDate\": \"2020-12-22T07:41:11+07:00\",\r\n        \"data\": {\r\n            \"bulkTxId\": \"8702569674785351997878930224320\",\r\n            \"bankCode\": \"014\",\r\n            \"beneficiaryAccountNo\": \"888801000003301\",\r\n            \"beneficiaryAccountName\": \"Yories Yolanda\",\r\n            \"amount\": {\r\n                \"value\": \"10000.00\",\r\n                \"currency\": \"IDR\"\r\n            }\r\n        },\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/interbank-bulk-transfer/notify": {
+      "post": {
+        "tags": [
+          "TriggerTransfer"
+        ],
+        "description": "Sample Request\r\n\r\n    {\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"bulkReqMsgId\": \"859028702\",\r\n        \"data\": {\r\n            \"bulkTxId\": \"8702569674785351997878930224320\",\r\n            \"responseCode\": \"2000000\",\r\n            \"responseMessage\": \"Request has been processed successfully\",\r\n            \"amount\": {\r\n                \"value\": \"10000.00\",\r\n                \"currency\": \"IDR\"\r\n            },\r\n            \"beneficiaryAccountNo\": \"888801000003301\",\r\n            \"beneficiaryBankCode\": \"002\",\r\n            \"sourceAccountNo\": \"Bank BRI\",\r\n            \"traceNo\": \"10052019\"\r\n        },\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/rtgs-transfer": {
+      "post": {
+        "tags": [
+          "TriggerTransfer"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    beneficiaryAccountNo    : 8000800808\r\n    beneficiaryBankCode     : 008 \r\n    sourceAccountNo         : 2000200202\r\n            \r\nSample Code\r\n\r\n    {\r\n        \"amount\": {\r\n            \"value\": \"10000.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"beneficiaryAccountName\": \"Yories Yolanda\",\r\n        \"beneficiaryAccountNo\": \"8000800808\",\r\n        \"beneficiaryAddress\": \"Palembang\",\r\n        \"beneficiaryBankCode\": \"008\",\r\n        \"beneficiaryBankName\": \"Bank BRI\",\r\n        \"beneficiaryCustomerResidence\": \"1\",\r\n        \"beneficiaryCustomerType\": \"1\",\r\n        \"beneficiaryEmail\": \"yories.yolanda@work.bri.co.id\",\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"currency\": \"IDR\",\r\n        \"customerReference\": \"10052019\",\r\n        \"feeType\": \"BEN\",\r\n        \"kodepos\": \"12250\",\r\n        \"receiverPhone\": \"080901020300\",\r\n        \"remark\": \"remark test\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"senderCustomerResidence\": \"1\",\r\n        \"senderCustomerType\": \"1\",\r\n        \"senderPhone\": \"080901020304\",\r\n        \"sourceAccountNo\": \"2000200202\",\r\n        \"transactionDate\": \"2020-12-21T14:36:11+07:00\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/skn-transfer": {
+      "post": {
+        "tags": [
+          "TriggerTransfer"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    beneficiaryAccountNo    : 8000800808\r\n    beneficiaryBankCode     : 008\r\n    sourceAccountNo         : 2000200202\r\n            \r\nSample Request\r\n\r\n    {\r\n        \"amount\": {\r\n            \"value\": \"10000.00\",\r\n            \"currency\": \"IDR\"\r\n        },\r\n        \"beneficiaryAccountName\": \"Yories Yolanda\",\r\n        \"beneficiaryAccountNo\": \"8000800808\",\r\n        \"beneficiaryAddress\": \"Palembang\",\r\n        \"beneficiaryBankCode\": \"008\",\r\n        \"beneficiaryBankName\": \"Bank BRI\",\r\n        \"beneficiaryCustomerResidence\": \"1\",\r\n        \"beneficiaryCustomerType\": \"1\",\r\n        \"beneficiaryEmail\": \"yories.yolanda@work.bri.co.id\",\r\n        \"clientId\": \"53519978789302243205291950786565\",\r\n        \"currency\": \"IDR\",\r\n        \"customerReference\": \"10052019\",\r\n        \"feeType\": \"BEN\",\r\n        \"kodepos\": \"12250\",\r\n        \"receiverPhone\": \"080901020300\",\r\n        \"remark\": \"remark test\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"senderCustomerResidence\": \"1\",\r\n        \"senderCustomerType\": \"1\",\r\n        \"senderPhone\": \"080901020304\",\r\n        \"sourceAccountNo\": \"2000200202\",\r\n        \"transactionDate\": \"2020-12-21T14:36:11+07:00\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/check-status": {
+      "post": {
+        "tags": [
+          "TransactionStatusInquiryBank"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    referrenceNumber    : 20201212010230\r\n            \r\nSample Code \r\n\r\n    {\r\n        \"clientId\": \"6ae957c4-2863-4713-acce-ba12de636cfc\",\r\n        \"originalExternalId\": \"10052019\",\r\n        \"referenceNumber\": \"20201212010230\",\r\n        \"reqMsgId\": \"8590287025696747853519978789302243205291950786565477980600171914\",\r\n        \"transactionDate\": \"2020-12-21T14:56:11+07:00\",\r\n        \"transferType\": \"INT\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Authorization-Customer",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/inquiry": {
+      "post": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": 88899,\r\n        \"customerNo\": 1234567890123456789,\r\n        \"virtualAccountNo\": \"0008889912345678901234567890\",\r\n        \"txnDateInit\": \"20201231T235959Z\",\r\n        \"channelCode\": 6011,\r\n        \"language\": \"ID\",\r\n        \"amount\": \"50000.00\",\r\n        \"currency\": \"IDR\",\r\n        \"hashedSourceAccountNo\": \"abcdefghijklmnopqrstuvwxyz123456\",\r\n        \"sourceBankCode\": \"008\",\r\n        \"additionalInfo\": {\r\n            \"xxxxxx\": \"xxxxxx\"\r\n        },\r\n        \"passApp\": \"”abcdefghijklmnopqrstuvwxyz”\",\r\n        \"inquiryRequestId\": \"abcdef-123456-abcdef\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/payment": {
+      "post": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": 88899,\r\n        \"customerNo\": 1234567890123456789,\r\n        \"virtualAccountNo\": \"0008889912345678901234567890\",\r\n        \"virtualAccountName\": \"Jokul Doe\",\r\n        \"virtualAccountEmail\": \"john@email.com\",\r\n        \"virtualAccountPhone\": \"6281828384858\",\r\n        \"trxId\": \"abcdefgh1234\",\r\n        \"paymentRequestId\": \"abcdef-123456-abcdef\",\r\n        \"channelCode\": 4444,\r\n        \"hashedSourceAccountNo\": \"abcdefghijklmnopqrstuvwxyz123456\",\r\n        \"sourceBankCode\": \"008\",\r\n        \"currency\": \"IDR\",\r\n        \"paidAmount\": \"55000.00\",\r\n        \"cumulativePaymentAmount\": \"1001010\",\r\n        \"paidBills\": \"\",\r\n        \"totalAmount\": \"88000.00\",\r\n        \"trxDateTime\": \"20201231T235959Z\",\r\n        \"referenceNo\": \"123456789012345\",\r\n        \"journalNum\": \"123456\",\r\n        \"paymentType\": 1,\r\n        \"flagAdvise\": \"Y\",\r\n        \"subCompany\": \"wer23\",\r\n        \"billDetails\": [\r\n            {\r\n                \"billCode\": \"01\",\r\n                \"billNo\": \"123456789012345678\",\r\n                \"billName\": \"Bill A for Jan\",\r\n                \"billShortName\": \"Bill A\",\r\n                \"billDescription\": {\r\n                    \"english\": \"Maintenance\",\r\n                    \"indonesia\": \"Pemeliharaan\"\r\n                },\r\n                \"billSubCompany\": \"00001\",\r\n                \"billAmount\": \"50000.00\",\r\n                \"additionalInfo\": {},\r\n                \"billReferenceNo\": \"123456789012345\"\r\n            }\r\n        ],\r\n        \"freeTexts\": [\r\n            {\r\n                \"english\": \"Free text\",\r\n                \"indonesia\": \"Tulisan bebas\"\r\n            }\r\n        ]\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/inquiry-status": {
+      "post": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": 88899,\r\n        \"customerNo\": 1234567890123456789,\r\n        \"virtualAccountNo\": \"0008889912345678901234567890\",\r\n        \"inquiryRequestId\": \"abcdef-123456-abcdef\",\r\n        \"paymentRequestId\": \"abcdef-123456-abcdef\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/create-va": {
+      "post": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": 88899,\r\n        \"customerNo\": 1234567890123456789,\r\n        \"virtualAccountNo\": \"0008889912345678901234567890\",\r\n        \"virtualAccountName\": \"Jokul Doe\",\r\n        \"virtualAccountEmail\": \"john@email.com\",\r\n        \"virtualAccountPhone\": \"6281828384858\",\r\n        \"trxId\": \"abcdefgh1234\",\r\n        \"currency\": \"IDR\",\r\n        \"totalAmount\": \"88000.00\",\r\n        \"billDetails\": [\r\n            {\r\n                \"billCode\": \"01\",\r\n                \"billNo\": \"123456789012345678\",\r\n                \"billName\": \"Bill A for Jan\",\r\n                \"billShortName\": \"Bill A\",\r\n                \"billDescription\": {\r\n                    \"english\": \"Maintenance\",\r\n                    \"indonesia\": \"Pemeliharaan\"\r\n                },\r\n                \"billSubCompany\": \"00001\",\r\n                \"billAmount\": \"50000.00\",\r\n                \"billAmountLabel\": \"Total Tagihan\",\r\n                \"billAmountValue\": \"Rp. 50.000,-\",\r\n                \"additionalInfo\": {}\r\n            }\r\n        ],\r\n        \"additionalInfo\": {},\r\n        \"freeTexts\": [\r\n            {\r\n                \"english\": \"Free text\",\r\n                \"indonesia\": \"Tulisan bebas\"\r\n            }\r\n        ],\r\n        \"virtualAccountTrxType\": \"1\",\r\n        \"feeAmount\": \"5000.00\",\r\n        \"expiredDate\": \"2020-12-31T23:59:59-07:00\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/update-va": {
+      "put": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": 88899,\r\n        \"customerNo\": 1234567890123456789,\r\n        \"virtualAccountNo\": \"0008889912345678901234567890\",\r\n        \"virtualAccountName\": \"Jokul Doe\",\r\n        \"virtualAccountEmail\": \"john@email.com\",\r\n        \"virtualAccountPhone\": \"6281828384858\",\r\n        \"trxId\": \"abcdefgh1234\",\r\n        \"currency\": \"IDR\",\r\n        \"totalAmount\": \"88000.00\",\r\n        \"billDetails\": [\r\n            {\r\n                \"billCode\": \"01\",\r\n                \"billNo\": \"123456789012345678\",\r\n                \"billName\": \"Bill A for Jan\",\r\n                \"billShortName\": \"Bill A\",\r\n                \"billDescription\": {\r\n                    \"english\": \"Maintenance\",\r\n                    \"indonesia\": \"Pemeliharaan\"\r\n                },\r\n                \"billSubCompany\": \"00001\",\r\n                \"billAmount\": \"50000.00\",\r\n                \"billAmountLabel\": \"Total Tagihan\",\r\n                \"billAmountValue\": \"Rp. 50.000,-\",\r\n                \"additionalInfo\": {}\r\n            }\r\n        ],\r\n        \"additionalInfo\": {},\r\n        \"freeTexts\": [\r\n            {\r\n                \"english\": \"Free text\",\r\n                \"indonesia\": \"Tulisan bebas\"\r\n            }\r\n        ],\r\n        \"virtualAccountTrxType\": \"1\",\r\n        \"feeAmount\": \"5000.00\",\r\n        \"expiredDate\": \"2020-12-31T23:59:59-07:00\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/update-status-va": {
+      "put": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": 88899,\r\n        \"customerNo\": 1234567890123456789,\r\n        \"virtualAccountNo\": \"0008889912345678901234567890\",\r\n        \"trxId\": \"adsadasfwdasd\",\r\n        \"paidStatus\": \"Y\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/inquiry-va": {
+      "post": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": 88899,\r\n        \"customerNo\": 1234567890123456789,\r\n        \"virtualAccountNo\": \"0008889912345678901234567890\",\r\n        \"trxId\": \"abcdefgh1234\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/delete-va": {
+      "delete": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": 88899,\r\n        \"customerNo\": 1234567890123456789,\r\n        \"virtualAccountNo\": \"0008889912345678901234567890\",\r\n        \"trxId\": \"abcdefgh1234\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/inquiry-payment-va-intrabank": {
+      "post": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": 88899,\r\n        \"customerNo\": 1234567890123456789,\r\n        \"virtualAccountNo\": \"0008889912345678901234567890\",\r\n        \"txnDateInit\": \"20201231T235959Z\",\r\n        \"channelCode\": 6011,\r\n        \"language\": \"ID\",\r\n        \"amount\": \"50000.00\",\r\n        \"currency\": \"IDR\",\r\n        \"sourceAccountNo\": \"1234567890\",\r\n        \"sourceAccountType\": \"S\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/payment-va-intrabank": {
+      "post": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": 88899,\r\n        \"customerNo\": 1234567890123456789,\r\n        \"virtualAccountNo\": \"0008889912345678901234567890\",\r\n        \"virtualAccountName\": \"Jokul Doe\",\r\n        \"virtualAccountEmail\": \"john@email.com\",\r\n        \"virtualAccountPhone\": \"6281828384858\",\r\n        \"sourceAccountNo\": \"1234567890\",\r\n        \"sourceAccountType\": \"S\",\r\n        \"inquiryRequestId\": \"abcdef-123456-abcdef\",\r\n        \"partnerReferenceNumber\": \"abcdef-123456-abcdef\",\r\n        \"currency\": \"IDR\",\r\n        \"paidAmount\": \"55000.00\",\r\n        \"cumulativePaymentAmount\": \"100101010\",\r\n        \"paidBills\": \"950000\",\r\n        \"totalAmount\": \"88000.00\",\r\n        \"trxDateTime\": \"20201231T235959Z\",\r\n        \"journalNum\": \"123456\",\r\n        \"paymentType\": 1,\r\n        \"flagAdvise\": \"Y\",\r\n        \"billDetails\": [\r\n            {\r\n                \"billCode\": \"01\",\r\n                \"billNo\": \"123456789012345678\",\r\n                \"billName\": \"Bill A for Jan\",\r\n                \"billShortName\": \"Bill A\",\r\n                \"billDescription\": {\r\n                    \"english\": \"Maintenance\",\r\n                    \"indonesia\": \"Pemeliharaan\"\r\n                },\r\n                \"billSubCompany\": \"00001\",\r\n                \"billAmount\": \"50000.00\",\r\n                \"billAmountLabel\": \"Total Tagihan\",\r\n                \"billAmountValue\": \"Rp. 50.000,-\",\r\n                \"additionalInfo\": {},\r\n                \"billReferenceNo\": \"123456789012345\"\r\n            }\r\n        ],\r\n        \"freeTexts\": [\r\n            {\r\n                \"english\": \"Free text\",\r\n                \"indonesia\": \"Tulisan bebas\"\r\n            }\r\n        ],\r\n        \"feeAmount\": \"5000.00\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/notification-payment-va-intrabank": {
+      "post": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": 88899,\r\n        \"customerNo\": 123456789012345678,\r\n        \"virtualAccountNo\": \"0008889912345678901234567890\",\r\n        \"inquiryRequestId\": \"abcdef-123456-abcdef\",\r\n        \"partnerReferenceNumber\": \"abcdef-123456-abcdef\",\r\n        \"trxDateTime\": \"20201231T235959Z\",\r\n        \"paymentStatus\": \"Success\",\r\n        \"paymentFlagReason\": {\r\n            \"english\": \"Success\",\r\n            \"indonesia\": \"Sukses\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/virtual-account/get-report": {
+      "post": {
+        "tags": [
+          "VirtualAccount"
+        ],
+        "description": "Please use this value for sandbox:\r\n            \r\n    \r\n            \r\nSample Request\r\n    \r\n    {\r\n        \"partnerServiceId\": \"88899\",\r\n        \"startDate\": \"2020-12-31\",\r\n        \"startTime\": \"00:00\",\r\n        \"endDate\": \"2021-12-31\",\r\n        \"endTime\": \"23:59\"\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}

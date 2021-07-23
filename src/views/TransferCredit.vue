@@ -1,5 +1,5 @@
 <template>
-  <div class="balanceinquiry" style="width: 100%; overflow: hidden; position: relative;">
+  <div class="topup" style="width: 100%; overflow: hidden; position: relative;">
       <div class="awan_top">
         <img class="img-cloud2" :src="require('@/assets/awan2.svg')" alt="">
       </div>
@@ -14,16 +14,32 @@
         mode="out-in">
         <div class="swagger-container">
           <div class="card mb-3">
-            <img class="card-img-top" src="https://i.ibb.co/xzN1Smb/pexels-liza-summer-6348118-2.jpg" alt="Card image cap">
+            <img class="card-img-top" src="https://i.ibb.co/GdDtBVS/pexels-cup-of-couple-6634170.jpg" alt="Card image cap">
             <div class="card-body">
-              <h1 class="card-title">BALANCE INQUIRY</h1>
-              <p class="card-text">API Balance Inquiry diperlukan agar Konsumen, Penyedia Barang dan/atau Jasa, PJP AIns, maupun PJP PIAS dapat mengakses informasi saldo terkini dari rekening yang dimiliki secara real time, sesuai dengan layanan yang disediakan oleh PJP AIS.</p>
+              <h1 class="card-title">TRANSFER CREDIT</h1>
+              <p class="card-text">API Top-Up diperlukan agar Konsumen, 
+              Penyedia Barang dan/atau Jasa, atau PJP PIAS dapat mengeksekusi perintah top up uang elektronik dan mengakses 
+              informasi riwayat top-up secara real time, sesuai dengan layanan yang disediakan oleh 
+              PJP AIS.</p>
             </div>
           </div>
-          <!-- <h1>BALANCE INQUIRY</h1> -->
           <div class="card">
+            <div class="card-header">
+              <b>TRANSFER CREDIT PJP AIS BANK</b>
+            </div>
             <div class="card-body">
-              <SwaggerBalanceInquiry/>
+              <SwaggerTransferCreditBank>
+              </SwaggerTransferCreditBank>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-header">
+              <b>TRANSFER CREDIT PJP AIS NON BANK</b>
+            </div>
+            <div class="card-body">
+              <SwaggerTransferCreditNonBank>
+              </SwaggerTransferCreditNonBank>
             </div>
           </div>
             <div class="awan_top">
@@ -36,23 +52,43 @@
       </transition>
     </b-container>
 
+    <b-modal id="modal-failed" hide-header hide-footer>
+      <div class="text-center">
+        <div id="failed-message" class="m-4">
+          <span v-html="error"></span>
+        </div>
+        <b-button @click="closeError" style="background: red;">OK</b-button>
+      </div>
+    </b-modal>
+
+    <b-modal id="modal-success" hide-header hide-footer>
+      <div class="text-center">
+        <div id="success-message" class="m-4">
+          <h1>Thank you for registering.</h1>
+          <span v-html="error"></span>
+        </div>
+        <b-button @click="closeSuccess" style="background: linear-gradient(310.6deg, #00a3fc 1.23%, #2d1de5 98.57%);">COOL!</b-button>
+      </div>
+    </b-modal>
+
   </div>
 </template>
 
 <script>
-import SwaggerBalanceInquiry from "@/components/SwaggerBalanceInquiry.vue"
+import SwaggerTransferCreditBank from "@/components/SwaggerTransferCreditBank.vue";
+import SwaggerTransferCreditNonBank from "@/components/SwaggerTransferCreditNonBank.vue";
+
 export default {
-  name: "BalanceInquiry",
+  name: "TransferCredit",
   components: {
-    SwaggerBalanceInquiry
+    SwaggerTransferCreditBank,
+    SwaggerTransferCreditNonBank
   },
   beforeCreate() {
     const applyconfig = {
       scroll: 50,
     }
     this.$emit('nav-scroll', applyconfig);
-  },
-  mounted() {
   },
   props: {
         params: {
@@ -84,7 +120,6 @@ h1 {
   font-size: 2rem;
   font-weight: bolder;
   letter-spacing: 0.1rem;
-  /* padding-top: 11vh; */
 }
 
 #logo-topup{
@@ -93,13 +128,7 @@ h1 {
 
 .swagger-container{
   margin-top:7%;
-}
-
-.card-text {
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  hyphens: none;
-}
+} 
 
 h2 {
   font-size: 72px;
@@ -117,7 +146,7 @@ img.img-cloud2 {
   opacity: 70%;
 }
 
-.balanceinquiry {
+.topup {
   background: rgba(0, 0, 0, 0);
   background-blend-mode: color;
   background-repeat: no-repeat;

@@ -10,7 +10,7 @@
           <b-col class="text-center">
             <div id="jargon">
               We help you to
-              <strong style="font-weight: 900">test and sandbox</strong> our
+              <strong style="font-weight: 900">get to know</strong> our
               <strong style="font-weight: 900">services</strong>
               <br />with our <strong style="font-weight: 900">IPT Client Simulator</strong>
             </div>

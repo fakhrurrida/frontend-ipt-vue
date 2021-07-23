@@ -1,12 +1,217 @@
 {
   "swagger": "2.0",
-  "host" : "api-devsitopenapi.herokuapp.com",
-  "schemes" : [ "https" ],
+  "host": "api-devsitopenapi.herokuapp.com",
+  "schemes": [
+    "https"
+  ],
   "paths": {
+    "/bi/openapi/card-registration": {
+      "post": {
+        "tags": [
+          "Registrasi"
+        ],
+        "description": "Sample Request \r\n    \r\n    {\r\n        \"accountName\":\"John Doe\",\r\n        \"bankAccountNo\":\"93802938408123\",\r\n        \"bankCardNo\":\"3984029384023984\",\r\n        \"bankCardType\":\"D\",\r\n        \"custIdMerchant\":\"0012345679504\",\r\n        \"dateOfBirth\":\"19900524\",\r\n        \"email\":\"john.doe@email.com\",\r\n        \"expiredDatetime\":\"2021-12-03T12:08:56+07:00\",\r\n        \"expiryDate\":\"1022\",\r\n        \"identificationNo\":\"284923840902938402\",\r\n        \"identificationType\":\"02\",\r\n        \"limit\":\"1000000\",\r\n        \"merchantLogoUrl\":\"https://bilba.test.com/dist/img/merchant-logo.png\",\r\n        \"phoneNo\":\"08238748728423\",\r\n        \"sendOtpFlag\":\"YES\",\r\n        \"transactionId\":\"2020102020202000011001\",\r\n        \"type\":\"subcribe\",\r\n        \"additionalInfo\":{\r\n            \"xxxxxx\":\"xxxxxx\"\r\n        }\r\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "e.g application/json",
+            "type": "string",
+            "maxLength": 16
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "e.g Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-SIGNATURE",
+            "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "ORIGIN",
+            "description": "e.g www.yourdomain.com",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-PARTNER-ID",
+            "description": "e.g 82150823919040624621823174737537",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-EXTERNAL-ID",
+            "description": "e.g 41807553358950093184162180797837",
+            "type": "string",
+            "maxLength": 32
+          },
+          {
+            "in": "header",
+            "name": "X-IP-ADDRESS",
+            "description": "e.g 172.24.281.24",
+            "type": "string",
+            "maxLength": 15
+          },
+          {
+            "in": "header",
+            "name": "X-DEVICE-ID",
+            "description": "e.g 09864ADCASA",
+            "type": "string",
+            "maxLength": 400
+          },
+          {
+            "in": "header",
+            "name": "X-LATITUDE",
+            "description": "e.g -6.1617169",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "X-LONGITUDE",
+            "description": "e.g 106.664394",
+            "type": "string",
+            "maxLength": 10
+          },
+          {
+            "in": "header",
+            "name": "CHANNEL-ID",
+            "description": "e.g 95221",
+            "type": "string",
+            "maxLength": 5
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/utilities/signature-auth": {
+      "post": {
+        "tags": [
+          "Keamanan"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-KEY",
+            "description": "Pleae use your clinet id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Private_Key",
+            "description": "Pleae use your private key to get valid rsa key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/bi/openapi/utilities/signature-service": {
+      "post": {
+        "tags": [
+          "Keamanan"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-TIMESTAMP",
+            "description": "e.g 2020-01-01T00:00:00+07:00",
+            "required": true,
+            "type": "string",
+            "maxLength": 25
+          },
+          {
+            "in": "header",
+            "name": "X-CLIENT-SECRET",
+            "description": "Pleae use your client secret",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "HttpMethod",
+            "description": "e.g POST",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "EndpoinUrl",
+            "description": "e.g /bi/openapi/..",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "AccessToken",
+            "description": "e.g eyJhbGci.eyJqdGkiO.rRCcOp9CQwOvhbCw",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/bi/openapi/access-token/b2b": {
       "post": {
         "tags": [
-          "AccessToken"
+          "Keamanan"
         ],
         "description": "Sample Request \r\n\r\n    {\r\n        \"grantType\": \"client_credentials\"\r\n    }",
         "consumes": [
@@ -24,7 +229,7 @@
           {
             "in": "header",
             "name": "X-CLIENT-KEY",
-            "description": "Please use your client id",
+            "description": "Pleae use your clinet id",
             "required": true,
             "type": "string"
           },
@@ -52,9 +257,9 @@
     "/bi/openapi/access-token/b2b2c": {
       "post": {
         "tags": [
-          "AccessToken"
+          "Keamanan"
         ],
-        "description": "Sample Request \r\n\r\n    {\r\n        \"grantType\": \"authorization_code\",\r\n        \"authCode\": \"a6975f82-d00a-4ddc-9633-087fefb6275e\",\r\n        \"refreshToken\": \"\"\r\n    }",
+        "description": "Sample Request \r\n\r\n    {\r\n        \"grantType\": \"authorization_code\",\r\n        \"authCode\": \"a6975f82-d00a-4ddc-9633-087fefb6275e\",\r\n        \"refreshToken\": \"a1f190ed-8848-49b3-b7e5-bd0ea9259673\"\r\n    }",
         "consumes": [
           "application/json"
         ],
@@ -70,7 +275,7 @@
           {
             "in": "header",
             "name": "X-CLIENT-KEY",
-            "description": "Please use your client id",
+            "description": "Pleae use your clinet id",
             "required": true,
             "type": "string"
           },
@@ -78,101 +283,6 @@
             "in": "header",
             "name": "X-SIGNATURE",
             "description": "e.g 7c8f0a2a7e96fb72f7ab9b675e2a42c3c6474",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": true,
-            "schema": { }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/bi/openapi/utilities/signature-auth": {
-      "post": {
-        "tags": [
-          "Utilities"
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "X-TIMESTAMP",
-            "description": "e.g 2020-01-01T00:00:00+07:00",
-            "required": true,
-            "type": "string",
-            "maxLength": 25
-          },
-          {
-            "in": "header",
-            "name": "X-CLIENT-KEY",
-            "description": "Please use your client id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "Private_Key",
-            "description": "Please use your private key to get valid rsa key",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/bi/openapi/utilities/signature-service": {
-      "post": {
-        "tags": [
-          "Utilities"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "X-TIMESTAMP",
-            "description": "e.g 2020-01-01T00:00:00+07:00",
-            "required": true,
-            "type": "string",
-            "maxLength": 25
-          },
-          {
-            "in": "header",
-            "name": "X-CLIENT-SECRET",
-            "description": "Please use your client secret",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "HttpMethod",
-            "description": "e.g POST",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "EndpoinUrl",
-            "description": "e.g /bi/openapi/..",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "AccessToken",
-            "description": "e.g eyJhbGci.eyJqdGkiO.rRCcOp9CQwOvhbCw",
             "required": true,
             "type": "string"
           },

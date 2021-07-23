@@ -9,7 +9,7 @@
 
 <script>
 import ShortProfile from "@/components/ShortProfile.vue";
-import DesignSprint from "../components/ServiceShowcase.vue"
+import DesignSprint from "../components/ServiceShowcase.vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
 

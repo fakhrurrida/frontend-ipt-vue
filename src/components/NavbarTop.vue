@@ -10,7 +10,6 @@
       variant="faded"
       ref="navbar"
     >
-          <!-- :class="{'collapsed':this.$refs.navtogglecomp.toggleState}" -->
       <b-navbar-brand class="navbar-s" href="/">
         <img
           id="logo-navbar-bi"
@@ -25,7 +24,7 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
           
-          <b-nav-item active :class="this.$route.name=='Home' ? 'mx-4 active' : 'mx-4'" href="/" v-if="!logged_in">
+          <b-nav-item active :class="this.$route.name=='Home' ? 'mx-4 active' : 'mx-4'" href="/">
             <b-nav-text class="navbar-i" >
               <span>DASHBOARD</span>
             </b-nav-text>
@@ -57,8 +56,14 @@
               <span>TRANSACTION</span>
             </b-nav-text>
           </b-nav-item>
-          
-            
+
+          <b-nav-item class="mx-4" href="/transfer-credit" v-if="logged_in">
+            <b-nav-text
+              class="navbar-i">
+              <span>CREDIT</span>
+            </b-nav-text>
+          </b-nav-item>
+  
           <b-nav-item-dropdown class="mx-4 mt-2 nav-item-login" variant="link" src="../assets/user.svg" right no-caret>
           <template #button-content>
             <svg width="100%" height="100%" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">

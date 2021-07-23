@@ -24,7 +24,11 @@
                 saldo rekening, dan beberapa informasi lainnya.</p>
             </div>
           </div>
-          <SwaggerTransactionHistory/>
+          <div class="card">
+            <div class="card-body">
+              <SwaggerTransactionHistory/>
+            </div>
+          </div>
             <div class="awan_top">
               <img class="img-cloud2" :src="require('@/assets/awan2.svg')" alt="">
             </div>
