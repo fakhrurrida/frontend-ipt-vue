@@ -17,10 +17,9 @@
             <img class="card-img-top" src="https://i.ibb.co/GdDtBVS/pexels-cup-of-couple-6634170.jpg" alt="Card image cap">
             <div class="card-body">
               <h1 class="card-title">TRANSFER CREDIT</h1>
-              <p class="card-text">API Top-Up diperlukan agar Konsumen, 
-              Penyedia Barang dan/atau Jasa, atau PJP PIAS dapat mengeksekusi perintah top up uang elektronik dan mengakses 
-              informasi riwayat top-up secara real time, sesuai dengan layanan yang disediakan oleh 
-              PJP AIS.</p>
+              <p class="card-text">API Transfer Kredit digunakan untuk melakukan pemindahbukuan dana 
+                dari satu rekening ke rekening lain baik dalam PJP AIS yang sama maupun PJP AIS yang 
+                berbeda yang diinisiasi oleh pihak pengirim (pihak terdebit).</p>
             </div>
           </div>
           <div class="card">

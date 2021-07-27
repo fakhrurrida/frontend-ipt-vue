@@ -24,7 +24,7 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
           
-          <b-nav-item active :class="this.$route.name=='Home' ? 'mx-4 active' : 'mx-4'" href="/">
+          <b-nav-item active :class="this.$route.name=='Home' ? 'mx-4 active' : 'mx-4'" href="/" v-if="!logged_in">
             <b-nav-text class="navbar-i" >
               <span>DASHBOARD</span>
             </b-nav-text>
@@ -60,7 +60,7 @@
           <b-nav-item class="mx-4" href="/transfer-credit" v-if="logged_in">
             <b-nav-text
               class="navbar-i">
-              <span>CREDIT</span>
+              <span>TRANSFER CREDIT</span>
             </b-nav-text>
           </b-nav-item>
   
